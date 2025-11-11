@@ -1,0 +1,5 @@
+﻿{
+  "startCommand": "node index.js",
+  "installDependencies": false,
+  "nodeVersion": "18"
+}
