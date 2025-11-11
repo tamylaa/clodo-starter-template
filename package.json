@@ -1,6 +1,20 @@
 ﻿{
   "name": "clodo-demo",
   "version": "1.0.0",
-  "description": "Clodo Framework Instant Demo",
-  "main": "index.js"
+  "description": "Clodo Framework Instant Demo - Edge computing made simple",
+  "main": "index.js",
+  "author": "Clodo Framework Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamylaa/clodo-starter-template"
+  },
+  "keywords": [
+    "edge-computing",
+    "cloudflare-workers",
+    "serverless",
+    "javascript",
+    "framework"
+  ],
+  "homepage": "https://clodo.dev"
 }
