@@ -2,6 +2,7 @@
   "name": "clodo-demo",
   "version": "1.0.0",
   "description": "Clodo Framework Instant Demo - Edge computing made simple",
+  "type": "module",
   "main": "index.js",
   "author": "Clodo Framework Team",
   "license": "MIT",
@@ -18,6 +19,6 @@
   ],
   "homepage": "https://clodo.dev",
   "dependencies": {
-    "clodo-framework": "^1.0.0"
+    "@tamyla/clodo-framework": "^3.1.24"
   }
 }
