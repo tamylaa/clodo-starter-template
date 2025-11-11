@@ -82,6 +82,15 @@ const testRequest2 = { method: 'GET', url: '/api/health' };
 demoService.handleRequest(testRequest2);
 
 console.log('✅ Ready to code! Edit the service logic above and re-run to see changes.');
+console.log('');
+console.log('🚀 NEXT STEPS:');
+console.log('1. Fork this project (top-right menu) to save your changes');
+console.log('2. Add new endpoints or modify the response logic');
+console.log('3. Ready to deploy? Visit: https://clodo.dev/cloudflare-pages-setup');
+console.log('4. Learn more: https://clodo.dev/docs');
+console.log('5. Close this tab to return to clodo.dev');
+console.log('');
+console.log('💡 Tip: This demo runs instantly - no setup required!');
     return response;
 });
 
