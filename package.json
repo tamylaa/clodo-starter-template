@@ -16,5 +16,8 @@
     "javascript",
     "framework"
   ],
-  "homepage": "https://clodo.dev"
+  "homepage": "https://clodo.dev",
+  "dependencies": {
+    "clodo-framework": "^1.0.0"
+  }
 }
