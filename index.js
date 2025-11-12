@@ -579,70 +579,147 @@ async function showDeploymentInfo() {
 async function simulateDeployment() {
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     
-    console.log('📦 Step 1: Preparing your service...');
-    await delay(800);
-    console.log('   ✅ Service configuration validated');
-    console.log('   ✅ Handler function ready');
+    console.log('� CLOUDFLARE WORKERS - DEPLOYMENT EXPERIENCE');
+    console.log('='.repeat(50));
     console.log('');
-    
-    console.log('🔨 Step 2: Building for edge deployment...');
+    console.log('See how simple it is to deploy to 310+ edge locations...');
+    console.log('');
     await delay(800);
-    console.log('   ✅ Dependencies bundled');
+    
+    console.log('🔑 STEP 1: Get Cloudflare API Token');
+    console.log('   Visit: https://dash.cloudflare.com/profile/api-tokens');
+    console.log('');
+    await delay(600);
+    console.log('   → Click "Create Token"');
+    console.log('   → Select "Edit Cloudflare Workers" template');
+    await delay(700);
+    console.log('');
+    console.log('   🎫 Generated: cf_1234567890abcdef...');
+    console.log('   ✅ Token ready with Workers permissions');
+    console.log('');
+    console.log('   💡 ONE API TOKEN - THAT\'S IT!');
+    console.log('      • Wrangler verifies your account');
+    console.log('      • Auto-fetches all account details');
+    console.log('      • No other credentials needed');
+    console.log('');
+    await delay(1200);
+    
+    console.log('⚙️  STEP 2: Configure Wrangler');
+    console.log('   $ wrangler login');
+    await delay(600);
+    console.log('');
+    console.log('   🔐 Enter your API token...');
+    await delay(800);
+    console.log('   ✅ Token saved securely');
+    console.log('');
+    console.log('   🎯 Wrangler automatically retrieved:');
+    await delay(500);
+    console.log('      • Your account details');
+    console.log('      • Available domains');
+    console.log('      • Worker quotas');
+    console.log('      • All zones & settings');
+    console.log('');
+    await delay(1000);
+    
+    console.log('📝 STEP 3: Create wrangler.toml');
+    await delay(600);
+    console.log('');
+    console.log('   name = "my-clodo-app"');
+    console.log('   main = "index.js"');
+    console.log('   compatibility_date = "2024-01-01"');
+    console.log('');
+    console.log('   ✅ Simple config - API token handles auth!');
+    console.log('');
+    await delay(800);
+    
+    console.log('🚀 STEP 4: Deploy!');
+    console.log('   $ wrangler deploy');
+    console.log('');
+    await delay(600);
+    console.log('   🔐 Authenticating with API token...');
+    await delay(500);
+    console.log('   ✅ Token valid');
+    console.log('   ✅ Account verified');
+    console.log('');
+    await delay(600);
+    
+    console.log('   📦 Building...');
+    await delay(700);
+    console.log('   ✅ Bundled: 12.4 KB');
+    console.log('');
+    await delay(600);
+    
+    console.log('   🌍 Uploading to edge network...');
+    await delay(900);
+    console.log('   ✅ Deployed to 310+ locations');
+    console.log('   ✅ https://my-clodo-app.workers.dev');
+    console.log('');
+    console.log('   ⚡ Done in 5.2 seconds');
+    console.log('');
+    await delay(800);
     console.log('   ✅ Code optimized for edge runtime');
     console.log('   ✅ Build size: 12.4 KB (compressed)');
     console.log('');
     
     console.log('🌍 Step 3: Deploying to global edge network...');
-    await delay(1000);
-    console.log('   ✅ Deployed to 310+ edge locations worldwide');
-    console.log('   ✅ Service available at: https://your-app.workers.dev');
-    console.log('');
-    
-    console.log('🧪 Step 4: Testing deployed service...');
     await delay(800);
     
-    // Simulate actual request to deployed service
+    console.log('✨ LIVE! Testing your service...');
     console.log('');
-    console.log('   📍 Request from: San Francisco, USA');
-    console.log('   ⏱️  Response time: 8ms');
+    await delay(700);
+    
+    // Simulate actual request to deployed service
+    console.log('   📍 San Francisco → https://my-clodo-app.workers.dev/api/health');
+    await delay(400);
+    console.log('      ⏱️  8ms');
     const sfResponse = demoService.handler(
         { method: 'GET', url: '/api/health', headers: { 'user-agent': 'Edge-Test/1.0' } },
         { NODE_ENV: 'production' }
     );
-    console.log('   📤 Response:', JSON.stringify(sfResponse, null, 2).split('\n').map((line, i) => i === 0 ? line : '      ' + line).join('\n'));
+    console.log('      ✅', sfResponse.message);
     console.log('');
     
-    console.log('   📍 Request from: Tokyo, Japan');
-    console.log('   ⏱️  Response time: 6ms');
-    console.log('   ✅ Low latency from edge location');
+    await delay(500);
+    console.log('   📍 Tokyo → https://my-clodo-app.workers.dev/api/health');
+    await delay(400);
+    console.log('      ⏱️  6ms');
+    console.log('      ✅ Served from nearest edge');
     console.log('');
     
-    console.log('   📍 Request from: London, UK');
-    console.log('   ⏱️  Response time: 7ms');
-    console.log('   ✅ Consistently fast worldwide');
+    await delay(500);
+    console.log('   📍 London → https://my-clodo-app.workers.dev/api/health');
+    await delay(400);
+    console.log('      ⏱️  7ms');
+    console.log('      ✅ Globally fast');
     console.log('');
     
-    console.log('🎉 DEPLOYMENT SUCCESSFUL!');
+    console.log('🎉 DEPLOYMENT COMPLETE!');
     console.log('='.repeat(50));
     console.log('');
-    console.log('📊 DEPLOYMENT STATS:');
-    console.log('   • Total time: ~3 seconds');
-    console.log('   • Edge locations: 310+');
-    console.log('   • Average response time: 7ms globally');
-    console.log('   • Cold start time: <1ms');
-    console.log('   • Monthly free tier: 100,000 requests/day');
+    console.log('📊 SUMMARY:');
+    console.log('   ✅ ONE API Token → Full deployment');
+    console.log('   ✅ 5 seconds → Live on 310+ edges');
+    console.log('   ✅ <10ms → Globally');
+    console.log('   ✅ Zero servers → Fully managed');
+    console.log('   ✅ Auto-scaling → Any traffic');
     console.log('');
-    console.log('💡 WHAT JUST HAPPENED:');
-    console.log('   • Your code was distributed to edge servers worldwide');
-    console.log('   • Users get served from the closest location');
-    console.log('   • No servers to manage - fully serverless');
-    console.log('   • Automatic scaling to handle any traffic');
+    console.log('💰 FREE TIER:');
+    console.log('   • 100,000 requests/day');
+    console.log('   • All 310+ locations');
+    console.log('   • No credit card needed');
     console.log('');
-    console.log('🚀 NEXT STEPS:');
-    console.log('   1. Sign up at https://dash.cloudflare.com');
-    console.log('   2. Install Wrangler CLI: npm install -g wrangler');
-    console.log('   3. Run: wrangler deploy');
-    console.log('   4. Your app goes live in seconds!');
+    console.log('🔄 UPDATES:');
+    console.log('   1. Edit code');
+    console.log('   2. wrangler deploy');
+    console.log('   3. Live in 5s!');
+    console.log('');
+    console.log('🎯 TRY IT:');
+    console.log('   1. Get API token: dash.cloudflare.com/profile/api-tokens');
+    console.log('   2. npm install -g wrangler');
+    console.log('   3. wrangler login');
+    console.log('   4. wrangler deploy');
+    console.log('');
+    console.log('📚 Learn more: https://clodo.dev/docs');
 }
 
 // Start the interactive demo
