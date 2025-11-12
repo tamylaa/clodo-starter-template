@@ -115,7 +115,8 @@ async function runInteractiveDemo() {
         console.log('2️⃣  **ERROR HANDLING** - See how framework handles invalid requests');
         console.log('3️⃣  **CODE MODIFICATION** - Edit and re-run to see changes');
         console.log('4️⃣  **ADD NEW ENDPOINT** - Create a custom API route');
-        console.log('5️⃣  **TRY IT LIVE** - See instant code changes in action!');
+        console.log('5️⃣  **DEPLOYMENT SIMULATION** - Experience deploying to the edge!');
+        console.log('6️⃣  **TRY IT LIVE** - See instant code changes in action!');
         console.log('');
         console.log('💻 HOW TO EXPLORE:');
         console.log('• Edit the code above and re-run with: npm start');
@@ -131,6 +132,7 @@ async function runInteractiveDemo() {
         console.log('// exploreErrorHandling() - Test error scenarios');
         console.log('// exploreCodeModification() - Learn about code editing');
         console.log('// showEndpointCreationGuide() - Add new API endpoints');
+        console.log('// showDeploymentInfo() - Experience edge deployment simulation');
         console.log('// tryItLive() - See live code changes');
         console.log('');
         console.log('💡 TIP: Uncomment any function call below to run it!');
@@ -141,6 +143,7 @@ async function runInteractiveDemo() {
         // await exploreErrorHandling();
         // await exploreCodeModification();
         // await showEndpointCreationGuide();
+        // await showDeploymentInfo();
         // await tryItLive();
 
         console.log('✨ Ready to explore! Edit and uncomment any demo function above.');
@@ -157,10 +160,11 @@ async function runInteractiveDemo() {
     console.log('2️⃣  **ERROR HANDLING** - See how framework handles invalid requests');
     console.log('3️⃣  **CODE MODIFICATION** - Edit and re-run to see changes');
     console.log('4️⃣  **ADD NEW ENDPOINT** - Create a custom API route');
-    console.log('5️⃣  **TRY IT LIVE** - See instant code changes in action!');
+    console.log('5️⃣  **DEPLOYMENT SIMULATION** - Experience deploying to the edge!');
+    console.log('6️⃣  **TRY IT LIVE** - See instant code changes in action!');
     console.log('');
 
-    const choice1 = await askQuestion('Enter your choice (1-5): ');
+    const choice1 = await askQuestion('Enter your choice (1-6): ');
 
     switch (choice1) {
         case '1':
@@ -176,6 +180,9 @@ async function runInteractiveDemo() {
             await showEndpointCreationGuide();
             break;
         case '5':
+            await showDeploymentInfo();
+            break;
+        case '6':
             await tryItLive();
             break;
         default:
@@ -548,12 +555,17 @@ async function tryItLive() {
 
 async function showDeploymentInfo() {
     console.log('');
-    console.log('🚀 DEPLOYMENT INFORMATION');
-    console.log('='.repeat(30));
+    console.log('🚀 DEPLOYMENT SIMULATION');
+    console.log('='.repeat(50));
     console.log('');
-    console.log('🔗 Ready to deploy your Clodo Framework app?');
+    console.log('Let\'s simulate deploying your Clodo Framework app to the edge!');
     console.log('');
-    console.log('📚 RESOURCES:');
+    
+    // Simulate deployment steps
+    await simulateDeployment();
+    
+    console.log('');
+    console.log('📚 REAL DEPLOYMENT RESOURCES:');
     console.log('• Documentation: https://clodo.dev/docs');
     console.log('• Cloudflare Pages Setup: https://clodo.dev/cloudflare-pages-setup');
     console.log('• GitHub Repo: https://github.com/tamylaa/clodo-framework');
@@ -562,6 +574,75 @@ async function showDeploymentInfo() {
     console.log('• Cloudflare Workers (Edge Computing)');
     console.log('• Cloudflare Pages');
     console.log('• Any JavaScript environment');
+}
+
+async function simulateDeployment() {
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    
+    console.log('📦 Step 1: Preparing your service...');
+    await delay(800);
+    console.log('   ✅ Service configuration validated');
+    console.log('   ✅ Handler function ready');
+    console.log('');
+    
+    console.log('🔨 Step 2: Building for edge deployment...');
+    await delay(800);
+    console.log('   ✅ Dependencies bundled');
+    console.log('   ✅ Code optimized for edge runtime');
+    console.log('   ✅ Build size: 12.4 KB (compressed)');
+    console.log('');
+    
+    console.log('🌍 Step 3: Deploying to global edge network...');
+    await delay(1000);
+    console.log('   ✅ Deployed to 310+ edge locations worldwide');
+    console.log('   ✅ Service available at: https://your-app.workers.dev');
+    console.log('');
+    
+    console.log('🧪 Step 4: Testing deployed service...');
+    await delay(800);
+    
+    // Simulate actual request to deployed service
+    console.log('');
+    console.log('   📍 Request from: San Francisco, USA');
+    console.log('   ⏱️  Response time: 8ms');
+    const sfResponse = demoService.handler(
+        { method: 'GET', url: '/api/health', headers: { 'user-agent': 'Edge-Test/1.0' } },
+        { NODE_ENV: 'production' }
+    );
+    console.log('   📤 Response:', JSON.stringify(sfResponse, null, 2).split('\n').map((line, i) => i === 0 ? line : '      ' + line).join('\n'));
+    console.log('');
+    
+    console.log('   📍 Request from: Tokyo, Japan');
+    console.log('   ⏱️  Response time: 6ms');
+    console.log('   ✅ Low latency from edge location');
+    console.log('');
+    
+    console.log('   📍 Request from: London, UK');
+    console.log('   ⏱️  Response time: 7ms');
+    console.log('   ✅ Consistently fast worldwide');
+    console.log('');
+    
+    console.log('🎉 DEPLOYMENT SUCCESSFUL!');
+    console.log('='.repeat(50));
+    console.log('');
+    console.log('📊 DEPLOYMENT STATS:');
+    console.log('   • Total time: ~3 seconds');
+    console.log('   • Edge locations: 310+');
+    console.log('   • Average response time: 7ms globally');
+    console.log('   • Cold start time: <1ms');
+    console.log('   • Monthly free tier: 100,000 requests/day');
+    console.log('');
+    console.log('💡 WHAT JUST HAPPENED:');
+    console.log('   • Your code was distributed to edge servers worldwide');
+    console.log('   • Users get served from the closest location');
+    console.log('   • No servers to manage - fully serverless');
+    console.log('   • Automatic scaling to handle any traffic');
+    console.log('');
+    console.log('🚀 NEXT STEPS:');
+    console.log('   1. Sign up at https://dash.cloudflare.com');
+    console.log('   2. Install Wrangler CLI: npm install -g wrangler');
+    console.log('   3. Run: wrangler deploy');
+    console.log('   4. Your app goes live in seconds!');
 }
 
 // Start the interactive demo
