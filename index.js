@@ -79,3 +79,67 @@ console.log('');
 console.log('🎉 Demo completed successfully!');
 console.log('💡 In StackBlitz: Edit this code and see changes instantly');
 console.log('🔄 Real npm package will be used automatically');
+console.log('');
+
+// ===== INTERACTIVE DEMO SECTION =====
+console.log('🚀 WELCOME TO THE INTERACTIVE CLODO FRAMEWORK EXPERIENCE!');
+console.log('='.repeat(60));
+console.log('');
+console.log('📋 What would you like to explore next?');
+console.log('');
+console.log('1️⃣  TEST DIFFERENT HTTP METHODS');
+console.log('   Try POST, PUT, DELETE requests');
+console.log('');
+console.log('2️⃣  TEST ERROR HANDLING');
+console.log('   See how the framework handles invalid requests');
+console.log('');
+console.log('3️⃣  MODIFY SERVICE LOGIC');
+console.log('   Edit the code above and re-run to see changes');
+console.log('');
+console.log('4️⃣  TEST MULTIPLE ENDPOINTS');
+console.log('   Add new API routes and test them');
+console.log('');
+console.log('5️⃣  ENVIRONMENT CONFIGURATION');
+console.log('   Test with different environment variables');
+console.log('');
+console.log('💻 HOW TO CONTINUE:');
+console.log('• Edit the service logic above (lines 25-45)');
+console.log('• Change response messages, add conditions, or create new endpoints');
+console.log('• Re-run with: node index.js');
+console.log('• Try different request types and URLs');
+console.log('');
+console.log('🔧 QUICK EXAMPLES TO TRY:');
+console.log('');
+console.log('// Add a new endpoint:');
+console.log('if (method === "GET" && url.includes("/api/users")) {');
+console.log('  response = { status: 200, users: ["Alice", "Bob", "Charlie"] };');
+console.log('}');
+console.log('');
+console.log('// Test POST requests:');
+console.log('if (method === "POST" && url.includes("/api/data")) {');
+console.log('  response = { status: 201, message: "Data created!", received: true };');
+console.log('}');
+console.log('');
+console.log('🎯 TIP: The framework automatically handles routing, error responses,');
+console.log('   and provides a consistent API structure. Focus on your business logic!');
+console.log('');
+console.log('🔗 Ready to deploy? Visit: https://clodo.dev/cloudflare-pages-setup');
+console.log('📚 Learn more: https://clodo.dev/docs');
+console.log('');
+
+// ===== ADDITIONAL DEMO FEATURES =====
+
+// Demonstrate different HTTP methods
+console.log('🧪 Testing additional features...');
+
+const postRequest = { method: 'POST', url: '/api/data', headers: { 'user-agent': 'StackBlitz/1.0' }, body: { name: 'test' } };
+const postResult = demoService.handler(postRequest, { NODE_ENV: 'development' });
+console.log('📨 POST request result:', postResult);
+
+const invalidRequest = { method: 'GET', url: '/api/invalid', headers: { 'user-agent': 'StackBlitz/1.0' } };
+const invalidResult = demoService.handler(invalidRequest, { NODE_ENV: 'development' });
+console.log('❌ Invalid endpoint result:', invalidResult);
+
+console.log('');
+console.log('✨ Your Clodo Framework demo is ready for experimentation!');
+console.log('   Edit, test, and explore the possibilities! 🚀');
