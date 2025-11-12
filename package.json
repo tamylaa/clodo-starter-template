@@ -18,6 +18,9 @@
     "framework"
   ],
   "homepage": "https://clodo.dev",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@tamyla/clodo-framework": "^3.1.23"
   }
