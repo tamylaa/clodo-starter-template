@@ -68,10 +68,14 @@ import readline from 'readline';
 // Detect if running in StackBlitz (web environment)
 const isStackBlitz = typeof window !== 'undefined' || process.env.STACKBLITZ_ENV === 'true';
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// Only create readline interface if not in StackBlitz
+let rl;
+if (!isStackBlitz) {
+    rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+}
 
 function askQuestion(question) {
     return new Promise((resolve) => {
