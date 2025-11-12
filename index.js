@@ -65,6 +65,9 @@ const demoService = createService('demo', (request, env) => {
 // ===== INTERACTIVE DEMO WITH USER CHOICES =====
 import readline from 'readline';
 
+// Detect if running in StackBlitz (web environment)
+const isStackBlitz = typeof window !== 'undefined' || process.env.STACKBLITZ_ENV === 'true';
+
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -96,6 +99,49 @@ async function runInteractiveDemo() {
     console.log('💡 In StackBlitz: Edit this code and see changes instantly');
     console.log('🔄 Real npm package will be used automatically');
     console.log('');
+
+    if (isStackBlitz) {
+        // In StackBlitz, show all options at once for better UX
+        console.log('🚀 CLODO FRAMEWORK INTERACTIVE EXPERIENCE');
+        console.log('='.repeat(50));
+        console.log('');
+        console.log('📋 AVAILABLE EXPLORATION OPTIONS:');
+        console.log('');
+        console.log('1️⃣  **HTTP METHODS** - Try POST, PUT, DELETE requests');
+        console.log('2️⃣  **ERROR HANDLING** - See how framework handles invalid requests');
+        console.log('3️⃣  **CODE MODIFICATION** - Edit and re-run to see changes');
+        console.log('4️⃣  **ADD NEW ENDPOINT** - Create a custom API route');
+        console.log('5️⃣  **TRY IT LIVE** - See instant code changes in action!');
+        console.log('');
+        console.log('💻 HOW TO EXPLORE:');
+        console.log('• Edit the code above and re-run with: npm start');
+        console.log('• Try different options by modifying the demo functions below');
+        console.log('• Each function shows different aspects of the framework');
+        console.log('');
+        console.log('🎯 QUICK START: Uncomment and run any demo function below!');
+        console.log('');
+
+        // Show all demo functions for easy access
+        console.log('🔧 AVAILABLE DEMO FUNCTIONS:');
+        console.log('// exploreHttpMethods() - Test different HTTP methods');
+        console.log('// exploreErrorHandling() - Test error scenarios');
+        console.log('// exploreCodeModification() - Learn about code editing');
+        console.log('// showEndpointCreationGuide() - Add new API endpoints');
+        console.log('// tryItLive() - See live code changes');
+        console.log('');
+        console.log('💡 TIP: Uncomment any function call below to run it!');
+        console.log('');
+
+        // Uncomment one of these to run a specific demo:
+        // await exploreHttpMethods();
+        // await exploreErrorHandling();
+        // await exploreCodeModification();
+        // await showEndpointCreationGuide();
+        // await tryItLive();
+
+        console.log('✨ Ready to explore! Edit and uncomment any demo function above.');
+        return;
+    }
 
     // ===== FIRST INTERACTION POINT =====
     console.log('🚀 WELCOME TO THE INTERACTIVE CLODO FRAMEWORK EXPERIENCE!');
@@ -168,7 +214,10 @@ async function runInteractiveDemo() {
             console.log('🔗 Visit https://clodo.dev for more information');
     }
 
-    rl.close();
+    // Only close readline interface if not in StackBlitz
+    if (!isStackBlitz) {
+        rl.close();
+    }
 }
 
 async function exploreHttpMethods() {
